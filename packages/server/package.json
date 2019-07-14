@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "main": "src/index.ts",
   "scripts": {
-    "build": "tsc -b",
     "clean": "rimraf dist",
-    "prepare": "yarn clean && tsc",
+    "build": "tsc -b && copyfiles -u 1 src/**/*.graphql dist",
+    "prepare": "yarn clean && yarn build",
     "start": "ts-node --files src/index.ts",
     "dev": "nodemon --exec ts-node --files src/index.ts"
   },
@@ -28,6 +28,7 @@
     "@types/glob": "^7.1.1",
     "@types/graphql": "^14.2.2",
     "@types/node": "^12.6.2",
+    "copyfiles": "^2.1.1",
     "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
     "rimraf": "^2.6.3",
