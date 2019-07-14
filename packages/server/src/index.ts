@@ -1,5 +1,3 @@
-import { startServer } from './server';
+import { server } from './server/index';
 
-startServer().then(({ port, apolloServer }) => {
-  console.log(`🚀 Server ready at http://localhost:${port}${apolloServer.graphqlPath}`);
-});
+server();
