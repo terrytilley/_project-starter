@@ -1,4 +1,5 @@
 dist/
+pgdata/
 
 # General
 .DS_Store

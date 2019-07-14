@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  db:
+    image: postgres
+    restart: always
+    env_file:
+      - '.env'
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+  server:
+    restart: always
+    depends_on:
+      - db
+    build: '.'
+    command: yarn dev
+    env_file:
+      - '.env'
+    ports:
+      - '4000:4000'
+    volumes:
+      - '.:/usr/app'
