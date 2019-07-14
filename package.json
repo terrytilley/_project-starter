@@ -1,0 +1,14 @@
+{
+  "name": "project-starter",
+  "private": true,
+  "scripts": {
+    "prepare": "lerna run prepare",
+    "bootstrap": "lerna bootstrap"
+  },
+  "devDependencies": {
+    "lerna": "^3.15.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

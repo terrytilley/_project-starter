@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./packages",
+    "target": "es6",
+    "lib": ["es6", "es2017", "es2017.object", "esnext.asynciterable"],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "paths": {
+      "@project-starter/*": ["./*/dist"]
+    }
+  }
+}
