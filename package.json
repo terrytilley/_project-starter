@@ -7,10 +7,10 @@
     "clean": "rimraf dist",
     "build": "tsc -b && copyfiles -u 1 src/**/*.graphql dist",
     "prepare": "yarn clean && yarn build",
-    "start": "ts-node --files src/index.ts",
+    "start": "yarn prepare && node dist/index.js",
     "dev": "nodemon --exec ts-node --files src/index.ts",
     "lint": "tslint -p tsconfig.json -c tslint.json",
-    "typeorm:cli": "ts-node ./node_modules/typeorm/cli -f ./src/ormconfig.ts"
+    "typeorm:cli": "ts-node ./node_modules/typeorm/cli -f ./src/ormconfig.js"
   },
   "dependencies": {
     "apollo-server": "^2.6.9",

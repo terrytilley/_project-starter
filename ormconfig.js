@@ -1,6 +1,4 @@
-import { ConnectionOptions } from 'typeorm';
-
-const config: Array<ConnectionOptions> = [
+module.exports = [
   {
     name: 'production',
     type: 'postgres',
@@ -42,5 +40,3 @@ const config: Array<ConnectionOptions> = [
     },
   },
 ];
-
-export = config;

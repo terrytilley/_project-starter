@@ -25,6 +25,6 @@
       "project-starter": ["./*/dist"]
     }
   },
-  "exclude": ["node_modules"],
-  "include": ["./src/**/*.ts"]
+  "exclude": ["node_modules", "pgdata"],
+  "include": ["./src/**/*.ts", "./ormconfig.ts"]
 }
