@@ -1,6 +1,6 @@
 {
   "defaultSeverity": "error",
-  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
+  "extends": ["tslint:latest", "tslint-config-prettier"],
   "jsRules": {},
   "rules": {
     "import-spacing": true,
@@ -31,7 +31,6 @@
     "prefer-object-spread": true,
     "no-unused-expression": true,
     "prefer-const": true,
-    "typeof-compare": true,
     "no-unnecessary-type-assertion": true,
     "no-consecutive-blank-lines": true,
     "no-construct": true,

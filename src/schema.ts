@@ -1,6 +1,7 @@
 import * as fs from 'fs';
-import * as path from 'path';
 import * as glob from 'glob';
+import * as path from 'path';
+
 import { makeExecutableSchema } from 'apollo-server';
 import { mergeResolvers, mergeTypes } from 'merge-graphql-schemas';
 

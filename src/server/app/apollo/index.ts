@@ -1,6 +1,6 @@
+import { ApolloServer } from 'apollo-server-express';
 import { Request } from 'express';
 import { GraphQLError } from 'graphql';
-import { ApolloServer } from 'apollo-server-express';
 
 import schema from '../../../schema';
 import { Context } from '../../../types';
@@ -14,6 +14,7 @@ const formatError = (e: GraphQLError) => {
   if (process.env.NODE_ENV === 'development') {
     console.log(e);
   }
+
   return e;
 };
 

@@ -1,10 +1,10 @@
 import { apollo } from '../apollo';
 
-type Config = {
+interface Config {
   host?: string;
   port?: number;
   log?: any;
-};
+}
 
 export const listen = (
   app: any,
