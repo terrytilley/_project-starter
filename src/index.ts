@@ -1,3 +1,6 @@
-import { server } from './server/index';
+import 'dotenv/config';
+import 'reflect-metadata';
+
+import server from './server';
 
 server();

@@ -1,4 +1,4 @@
-import { apollo } from '../apollo';
+import apollo from '../apollo';
 
 interface Config {
   host?: string;

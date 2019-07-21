@@ -6,7 +6,7 @@ import listen from './listen';
 import rateLimit from './rateLimit';
 import session from './session';
 
-export const createApp = () => {
+export default () => {
   const app = express();
 
   cors(app);

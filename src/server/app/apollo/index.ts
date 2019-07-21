@@ -30,7 +30,7 @@ const playground =
         },
       };
 
-export const apollo = new ApolloServer({
+export default new ApolloServer({
   schema,
   context,
   formatError,
