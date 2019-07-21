@@ -3,11 +3,14 @@ import { Request } from 'express';
 import { GraphQLError } from 'graphql';
 
 import schema from '../../../schema';
-import { Context } from '../../../types';
+import redis from '../../../services/redis';
+import { Context, Session } from '../../../types';
 
 const context = ({ req }: { req: Request }): Context => ({
   url: `${req.protocol}://${req.get('host')}`,
   req,
+  redis,
+  session: req.session as Session,
 });
 
 const formatError = (e: GraphQLError) => {
