@@ -13,16 +13,26 @@ const context = ({ req }: { req: Request }): Context => ({
   session: req.session as Session,
 });
 
-const formatError = (e: GraphQLError) => {
+const formatError = (err: GraphQLError) => {
   if (process.env.NODE_ENV === 'development') {
-    console.log(e);
+    console.log(err);
   }
 
-  return e;
+  return err;
 };
+
+const playground =
+  process.env.NODE_ENV === 'production'
+    ? false
+    : {
+        settings: {
+          'request.credentials': 'include',
+        },
+      };
 
 export const apollo = new ApolloServer({
   schema,
   context,
   formatError,
+  playground,
 });
