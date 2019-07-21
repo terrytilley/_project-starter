@@ -1,0 +1,15 @@
+type User {
+  id: ID!
+  email: String!
+  username: String!
+}
+
+type Query {
+  user(where: UserWhereFilter!): User
+}
+
+input UserWhereFilter {
+  id: String
+  email: String
+  username: String
+}
