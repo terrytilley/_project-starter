@@ -26,5 +26,5 @@
     }
   },
   "exclude": ["node_modules", "pgdata"],
-  "include": ["./src/**/*.ts", "./ormconfig.ts"]
+  "include": ["./src/**/*.ts"]
 }

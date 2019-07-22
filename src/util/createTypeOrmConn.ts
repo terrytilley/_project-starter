@@ -1,7 +1,6 @@
-import { createConnection, getConnectionOptions } from 'typeorm';
+import { createConnection } from 'typeorm';
+import * as config from '../ormconfig';
 
 export const createTypeOrmConn = async () => {
-  const connectionOptions = await getConnectionOptions(process.env.NODE_ENV);
-
-  return createConnection({ ...connectionOptions, name: 'default' });
+  return createConnection(config);
 };

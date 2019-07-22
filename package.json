@@ -2,7 +2,7 @@
   "name": "project-starter",
   "private": true,
   "version": "1.0.0",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "clean": "rimraf dist",
     "build": "tsc -b && copyfiles -u 1 src/**/*.graphql dist",
@@ -10,9 +10,9 @@
     "start": "yarn prepare && node dist/index.js",
     "dev": "nodemon --exec ts-node --files src/index.ts",
     "lint": "tslint -p tsconfig.json -c tslint.json",
+    "typeorm": "ts-node ./node_modules/typeorm/cli -f ./src/ormconfig.ts",
     "gen:schema": "apollo schema:download --endpoint=http://localhost:4000/graphql schema.json",
-    "gen:types": "yarn run gen:schema && gql2ts --ignore-type-name-declaration schema.json -o src/types/schema.d.ts",
-    "typeorm:cli": "ts-node ./node_modules/typeorm/cli -f ./src/ormconfig.js"
+    "gen:types": "yarn run gen:schema && gql2ts --ignore-type-name-declaration schema.json -o src/types/schema.d.ts"
   },
   "dependencies": {
     "apollo-server": "^2.7.0",
