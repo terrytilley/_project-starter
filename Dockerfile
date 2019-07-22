@@ -9,5 +9,7 @@ RUN npm install -g yarn
 RUN yarn install
 RUN yarn run build
 
+COPY .env ./dist/
+
 EXPOSE 4000
 CMD node dist/index.js

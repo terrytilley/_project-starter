@@ -1,6 +1,6 @@
-import { apollo } from '../apollo';
+import apollo from '../apollo';
 
-export const cors = (app: any) => {
+export default (app: any) => {
   apollo.applyMiddleware({
     app,
     cors: {

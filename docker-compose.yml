@@ -1,8 +1,15 @@
 version: '3.7'
 services:
+  redis:
+    image: redis
+    restart: always
+    networks: 
+      - webnet
   db:
     image: postgres
     restart: always
+    networks: 
+      - webnet
     env_file:
       - '.env'
     ports:
@@ -10,14 +17,18 @@ services:
     volumes:
       - ./pgdata:/var/lib/postgresql/data
   server:
+    build: '.'
     restart: always
+    networks: 
+      - webnet
     depends_on:
       - db
-    build: '.'
-    command: yarn dev
     env_file:
       - '.env'
     ports:
       - '4000:4000'
     volumes:
       - '.:/usr/app'
+    command: yarn dev
+networks:
+  webnet:

@@ -1,6 +1,6 @@
 import { createTypeOrmConn } from '../../util/createTypeOrmConn';
 
-export const connectDb = async (retries = 5) => {
+export default async (retries = 5) => {
   while (retries) {
     try {
       const connection = await createTypeOrmConn();

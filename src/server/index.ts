@@ -1,7 +1,7 @@
-import { createApp } from './app';
-import { connectDb } from './db';
+import createApp from './app';
+import connectDb from './db';
 
-export const server = async () => {
+export default async () => {
   await connectDb();
   createApp();
 };

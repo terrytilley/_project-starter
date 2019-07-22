@@ -3,23 +3,36 @@ import { Request } from 'express';
 import { GraphQLError } from 'graphql';
 
 import schema from '../../../schema';
-import { Context } from '../../../types';
+import redis from '../../../services/redis';
+import { Context, Session } from '../../../types';
 
 const context = ({ req }: { req: Request }): Context => ({
   url: `${req.protocol}://${req.get('host')}`,
   req,
+  redis,
+  session: req.session as Session,
 });
 
-const formatError = (e: GraphQLError) => {
+const formatError = (err: GraphQLError) => {
   if (process.env.NODE_ENV === 'development') {
-    console.log(e);
+    console.log(err);
   }
 
-  return e;
+  return err;
 };
 
-export const apollo = new ApolloServer({
+const playground =
+  process.env.NODE_ENV === 'production'
+    ? false
+    : {
+        settings: {
+          'request.credentials': 'include',
+        },
+      };
+
+export default new ApolloServer({
   schema,
   context,
   formatError,
+  playground,
 });

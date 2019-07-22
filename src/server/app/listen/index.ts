@@ -1,4 +1,4 @@
-import { apollo } from '../apollo';
+import apollo from '../apollo';
 
 interface Config {
   host?: string;
@@ -6,7 +6,7 @@ interface Config {
   log?: any;
 }
 
-export const listen = (
+export default (
   app: any,
   { host = 'localhost', port = 4000, log = console.log }: Config = {}
 ) => {
