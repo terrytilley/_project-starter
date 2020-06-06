@@ -15,7 +15,7 @@
     "gen:types": "yarn run gen:schema && gql2ts --ignore-type-name-declaration schema.json -o src/types/schema.d.ts"
   },
   "dependencies": {
-    "apollo-server": "^2.9.2",
+    "apollo-server": "^2.14.2",
     "apollo-server-express": "^2.9.2",
     "bcryptjs": "^2.4.3",
     "connect-redis": "^3.4.2",
