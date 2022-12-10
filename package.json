@@ -21,7 +21,7 @@
     "connect-redis": "^3.4.2",
     "cors": "^2.8.5",
     "dotenv": "^8.1.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-rate-limit": "^5.0.0",
     "express-session": "^1.16.2",
     "glob": "^7.1.4",
